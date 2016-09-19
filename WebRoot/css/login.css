@@ -1,0 +1,333 @@
+@charset "utf-8";
+body{
+	top:0px;
+	margin-top:0px;
+	text-align:center;
+	font-size:13px;
+	width:100%;
+	font-family:宋体;
+	margin:0px auto;
+	BACKGROUND: url(../images/loginbg.jpg) repeat-x center top; 
+	
+}
+
+a {
+	font-size: 13px;
+	color: #999999;
+	text-decoration: none;
+}
+a:hover {
+	font-size: 13px;
+	color:#e00a7a;
+	text-decoration: none;
+}
+/****顶部****/
+.top {
+	CLEAR: both; 
+	
+	WIDTH: 100%; 
+	HEIGHT: 130px;
+}
+.topcon{
+	height:auto;
+	width: 900px;
+	text-align:center;
+	margin:0px auto;
+	overflow:hidden;
+}
+.login{
+	width:100%;
+	height:auto;
+	float:left;
+	text-align:right;
+	padding-top:10px;
+}
+.logo{
+	width:100%;
+	height:auto;
+	float:left;
+	text-align:center;
+	padding-top:40px;
+	padding-bottom:100px;
+}
+.logindiv{
+	width:100%;
+	height:auto;
+	float:left;
+	padding-top:50px;
+}
+.logincon{
+	width:500px;
+	height:337px;
+	margin:0 auto;
+	text-align:center;
+	BACKGROUND: url(../images/loginconbg.png) no-repeat center top;
+	padding-left:150px;
+	padding-top:120px;
+}
+.username{
+	width:272px;
+	height:50px;
+	float:left;
+	BACKGROUND: url(../images/usernamebg.png) no-repeat center top;
+	padding-left:70px;
+	padding-top:10px;
+}
+.username input{
+	width:260px;
+	height:35px;
+	float:left;
+	border:0px;
+	background:transparent;
+	font-size:16px;
+	color:#ffffff;
+	font-family:微软简中圆,微软雅黑;
+}
+.passward{
+	width:272px;
+	height:50px;
+	float:left;
+	BACKGROUND: url(../images/passwardbg.png) no-repeat center top;
+	margin-top:15px;
+	padding-left:70px;
+	padding-top:10px;
+}
+.passward input{
+	width:260px;
+	height:35px;
+	float:left;
+	border:0px;
+	background:transparent;
+	font-size:16px;
+	color:#ffffff;
+	font-family:微软简中圆,微软雅黑;
+}
+.button{
+	width:342px;
+	height:60px;
+	float:left;
+	padding-top:30px;
+	padding-right:100px;
+}
+.fuxuan{
+	width:100px;
+	height:auto;
+	float:left;
+	padding-top:10px;
+	text-align:left;
+	color:#999999;
+}
+.wjmm{
+	width:240px;
+	height:auto;
+	float:left;
+	text-align:right;
+	padding-top:15px;
+	color:#999999;
+}
+.footer{
+	width:100%;
+	height:81px;
+	float:left;
+	BACKGROUND: url(../images/footerbg.jpg) repeat-x center bottom;
+	margin-top:140px;
+}
+.foocon{
+	width:850px;
+	height:auto;
+	margin:0 auto;
+	text-align:center;
+}
+.banquan{
+	width:40%;
+	height:auto;
+	float:left;
+	text-align:left;
+	line-height:21px;
+	color:#555658;
+	font-size:12px;
+	padding-top:20px;
+}
+.banquan a{
+	color:#555658;
+	font-size:12px;
+}
+.banquan a:hover{
+	color:#000000;
+	text-decoration:underline;
+}
+.footlogo{
+	width:20%;
+	float:left;
+	text-align:center;
+	
+}
+.link{
+	width:40%;
+	height:auto;
+	float:left;
+	text-align:right;
+	padding-top:30px;
+}
+.link img{
+	padding-left:10px;
+}
+.erweima{
+	display:none;
+	position:fixed;
+	width:1000px;
+	height:auto;
+	text-align:right;
+	margin:0 auto;
+	bottom:0px;
+	z-index:900;
+}
+@media screen and (max-device-width: 480px) { 
+
+/****顶部****/
+.top {
+	CLEAR: both; 
+	
+	WIDTH: 100%; 
+	HEIGHT: 130px;
+}
+.topcon{
+	height:auto;
+	width: auto;
+	text-align:center;
+	margin:0px auto;
+	overflow:hidden;
+}
+.login{
+	width:100%;
+	height:auto;
+	float:left;
+	text-align:right;
+	padding-top:10px;
+}
+.logo{
+	width:100%;
+	height:auto;
+	float:left;
+	text-align:center;
+	padding-top:40px;
+	padding-bottom:100px;
+	
+}
+.logindiv{
+	width:100%;
+	height:auto;
+	float:left;
+	padding-top:50px;
+}
+.logincon{
+	width:100%;
+	height:337px;
+	margin:0 auto;
+	text-align:center;
+	BACKGROUND: url(../images/loginconbg.png) no-repeat center top;
+	padding-left:15px;
+	padding-top:12px;
+}
+.username{
+	width:272px;
+	height:50px;
+	float:left;
+	BACKGROUND: url(../images/usernamebg.png) no-repeat center top;
+	margin-top:15px;
+	padding-left:70px;
+	padding-top:10px;
+}
+.username input{
+	width:260px;
+	height:35px;
+	float:left;
+	border:0px;
+	background:transparent;
+	font-size:16px;
+	color:#ffffff;
+	font-family:微软简中圆,微软雅黑;
+}
+.passward{
+	width:272px;
+	height:50px;
+	float:left;
+	BACKGROUND: url(../images/passwardbg.png) no-repeat center top;
+	margin-top:15px;
+	padding-left:70px;
+	padding-top:10px;
+}
+.passward input{
+	width:260px;
+	height:35px;
+	float:left;
+	border:0px;
+	background:transparent;
+	font-size:16px;
+	color:#ffffff;
+	font-family:微软简中圆,微软雅黑;
+}
+.button{
+	width:342px;
+	height:60px;
+	float:left;
+	padding-top:30px;
+	
+}
+.fuxuan{
+	width:100px;
+	height:auto;
+	float:left;
+	padding-top:10px;
+	text-align:left;
+	color:#999999;
+}
+.wjmm{
+	width:240px;
+	height:auto;
+	float:left;
+	text-align:right;
+	padding-top:15px;
+	color:#999999;
+}
+
+.foocon{
+display:none;
+}
+.banquan{
+	width:40%;
+	height:auto;
+	float:left;
+	text-align:left;
+	line-height:21px;
+	color:#555658;
+	font-size:12px;
+	padding-top:20px;
+}
+.banquan a{
+	color:#555658;
+	font-size:12px;
+}
+.banquan a:hover{
+	color:#000000;
+	text-decoration:underline;
+}
+.footer{
+	display:none;
+}
+.link{
+	width:40%;
+	height:auto;
+	float:left;
+	text-align:right;
+	padding-top:30px;
+}
+.link img{
+	padding-left:10px;
+}
+.erweima{
+	display:none;
+	
+}
+} 
+

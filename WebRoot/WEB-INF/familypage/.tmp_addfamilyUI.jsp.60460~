@@ -1,0 +1,60 @@
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ taglib uri="/struts-tags"  prefix="s"%>
+<%@ taglib prefix="sx" uri="/struts-dojo-tags" %> 
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<%
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
+<html>
+  <head>
+
+    
+    <title>添加家庭</title>
+    <base href="<%=basePath%>">
+    <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="expires" content="0">    
+	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+	<meta http-equiv="description" content="This is my page">
+	
+	<sx:head/>
+	<script>
+	$().ready(function(){
+		$("#love").focusout(function(){
+			$.post("",{},function(data,textStat){
+			
+			
+			});
+			});
+		});
+	</script>
+  	</head>
+  <body>
+
+
+   <s:form action="familyAction_add" namespace="/family" method="post">
+   <table width="100%" border="1">
+   
+   
+  			<tr><td>家庭地址：</td><td><s:textfield name="familybean.family_address"/></td></tr>
+  			<tr><td>家庭电话：</td><td><s:textfield name="familybean.home_phone"/></td></tr>
+  			<tr><td>爱情密码：</td><td><s:textfield name="familybean.lovepwd" id="love"/><font id="ts"></font></td></tr>
+  			<tr><td>护照编号：</td><td><s:textfield name="familybean.postnum"/></td></tr>
+  			<tr><td>婚纱套系（价格）：</td><td><s:textfield name="familybean.consumption"/></td></tr>
+  			<tr><td>结婚日期：</td><td><sx:datetimepicker name="familybean.marrydate" displayFormat="yyyy-MM-dd" displayWeeks="4" toggleType="explode" toggleDuration="200"/><input type="radio" name="familybean.islun" value="1" >阴历    <input type="radio" name="familybean.islun" value="0"/>阳历(客户过周年纪念是以阴历还是阳历。)</td></tr>
+  			<tr><td>预产日期：</td><td><sx:datetimepicker name="familybean.childbirth" displayFormat="yyyy-MM-dd" displayWeeks="4" toggleType="explode" toggleDuration="200"/></td></tr>
+			<tr><td>家庭介绍：</td><td><s:textarea name="familybean.home_instructions"/></td></tr>
+			<tr><td>所属影楼：</td><td><s:select id="select" name="familybean.family_studio.studio_id" list="studios" listKey="studio_id" listValue="studio_name" value="studio_id" headerKey="%{#request.fs.studio_id}" headerValue="%{#request.fs.studio_name}"/></td></tr>
+  			<s:token/>
+  			<tr><td><input type="submit" value="加入"/></td></tr>
+  		</table>
+  		</s:form>
+  		<script type="text/javascript">
+		document.getElementsByName('familybean.islun')[1].checked=true;//--默认选中阳历 --
+	</script>
+  </body>
+  
+</html>
+

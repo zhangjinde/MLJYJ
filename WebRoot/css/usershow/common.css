@@ -1,0 +1,148 @@
+﻿
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>家印记产品</title>
+<script type="text/javascript" src="/skin/jiayinji/js/jquery.min.js"></script>
+<script type="text/javascript" src="/skin/jiayinji/js/jquery.smint.js"></script>
+<script type="text/javascript" src="/skin/jiayinji/js/animate.js"></script>
+<script type="text/javascript" src="/skin/jiayinji/js/zzsc.js"></script>
+<link rel="stylesheet" type="text/css" href="/skin/jiayinji/css/reset.css" />
+<link rel="stylesheet" type="text/css" href="/skin/jiayinji/css/common.css" />
+<style>
+#main{width:1000px; margin:auto; margin-top:15px; min-height:400px; margin-bottom:20px;}
+
+#main .title{width:100%; margin:auto; margin-top:15px; text-align:center; margin-bottom:10px;}
+
+#main ul{width:100%; margin:auto;}
+#main ul li{width:333px; height:510px; float:left; text-align:center;background-color:#000; margin-top:10px;}
+#main ul li img{width:333px; height:510px;}
+</style>
+</head>
+<body>
+<!--头部-->
+<div id="header">
+	<div id="top">
+		<div id="top_main">
+			<iframe id="weather" SRC="/e/extend/weather/" scrolling="no" frameborder="0" allowTransparency="true" width="170px;" height="54px;" style="float:right;"></iframe>
+			<div id='top_weather'></div>
+			<script src="/e/extend/count/index.php"></script>			
+		</div>		
+	</div>
+	<a name="go_top"></a>
+	<div id="nav">
+		<div id="nav_main">
+			<a href="/"><img src="/skin/jiayinji/images/logo.png" border="0" /></a>
+			<ul>
+				<li><a href="/aboutus"><img src="/skin/jiayinji/images/menu_01.png" border="0"/></a></li>
+				<li><a href="/culture"><img src="/skin/jiayinji/images/menu_02.png" border="0"/></a></li>
+				<li><a href="/products"><img src="/skin/jiayinji/images/menu_03.png" border="0"/></a></li>
+				<li><a href="/globalmap"><img src="/skin/jiayinji/images/menu_04.png" border="0"/></a></li>
+			</ul>
+		</div>
+	</div>	<div id="slider"><img src="/skin/jiayinji/images/slider_01.png"/></div>
+</div>
+<div id="quickmenu">
+	<div class="quickmenu"><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=800018109&site=qq&menu=yes"><img src="/skin/jiayinji/images/quick-01.png" width="250" height="70" border="0"/></a></div>
+	<div class="quickmenu" style="left:250px;"><a href="/weixin.html"><img src="/skin/jiayinji/images/quick-02.png" width="250" height="70" border="0"/></a></div>
+	<div class="quickmenu" style="left:500px;"><img src="/skin/jiayinji/images/quick-03.png" width="250" height="70"/></div>
+	<div class="quickmenu" style="left:750px;"><img src="/skin/jiayinji/images/quick-04.png" width="250" height="70"/></div>
+</div><!--正文-->
+<div id="main">
+	<div class="title"><img src="/skin/jiayinji/images/product-01.png" width="400" height="43" border="0" /></div>
+	<ul class="box">
+			<li>
+			<a href="show.php?id=1" target="_blank"><img src="/d/file/p/2015-01-17/be4ad3e282dced501c054189e9f46736.jpg" border="0" /></a>
+		</li>
+			<li>
+			<a href="show.php?id=2" target="_blank"><img src="/d/file/p/2015-01-17/241f6039b02a24089ab83f92a1fa4af4.jpg" border="0" /></a>
+		</li>
+			<li>
+			<a href="show.php?id=3" target="_blank"><img src="/d/file/p/2015-01-17/c5f4a72a37d6c049c8bd4129f2258163.jpg" border="0" /></a>
+		</li>
+			<li>
+			<a href="show.php?id=4" target="_blank"><img src="/d/file/p/2015-01-17/0c1b44a6a249893213728e4804a553db.jpg" border="0" /></a>
+		</li>
+			<li>
+			<a href="show.php?id=5" target="_blank"><img src="/d/file/p/2015-01-17/fd6a5872852f9922c13dd418c87a3920.jpg" border="0" /></a>
+		</li>
+			<li>
+			<a href="show.php?id=6" target="_blank"><img src="/d/file/p/2015-01-17/344d59550d930e385e01d1d16710a2ea.jpg" border="0" /></a>
+		</li>
+			<li>
+			<a href="show.php?id=7" target="_blank"><img src="/d/file/p/2015-01-17/e69edec52685d33a2d11bca7d399f68e.jpg" border="0" /></a>
+		</li>
+			<li>
+			<a href="show.php?id=8" target="_blank"><img src="/d/file/p/2015-01-17/0bc5cb480f5fab826d909ff5a10960de.jpg" border="0" /></a>
+		</li>
+			<li>
+			<a href="show.php?id=9" target="_blank"><img src="/d/file/p/2015-01-17/a59270f599c545df2e4a67590d0ee5e2.jpg" border="0" /></a>
+		</li>
+		</ul>
+	<div style="clear:both"></div>	
+	<div class="title"><img src="/skin/jiayinji/images/product-02.png"/></div>
+	<ul>
+		<img src="/skin/jiayinji/images/temp/p10.jpg"/>
+	</ul>
+</div>
+<!--尾部-->
+<div id="foot">
+	<div class="foot_link">
+	<ul id="foot_link">
+		<li><img src="/skin/jiayinji/images/link_01.png" /></li>
+		<li><img src="/skin/jiayinji/images/link_02.png" /></li>
+		<li><img src="/skin/jiayinji/images/link_03.png" /></li>
+		<li><img src="/skin/jiayinji/images/link_04.png" /></li>
+		<li><img src="/skin/jiayinji/images/link_05.png" /></li>
+		<li><img src="/skin/jiayinji/images/link_06.png" /></li>
+	</ul>
+	</div>
+	<p>
+	Copyright © 2004-2015 上海和吉文化传媒有限公司。 All Rights Reserved.
+	</p>
+</div><div class="float_l" id="float_l">
+	<div><a href=""><img src="/skin/jiayinji/images/quick-left-01.png" /></a></div>
+	<div><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=800018109&site=qq&menu=yes"><img src="/skin/jiayinji/images/quick-left-02.png" /></a></div>
+	<div><a href="/weixin.html"><img src="/skin/jiayinji/images/quick-left-03.png" /></a></div>
+</div>    
+<div class="float_r" id="float_r">	
+	<a href="#go_top"><img src="/skin/jiayinji/images/quick-right-01.png" border="0" /></a>
+</div>
+<script>
+//浮动导航
+function float_nav(dom){
+	var right_nav=$(dom);
+	var nav_height=right_nav.height();
+	function right_nav_position(bool){
+		var nav_top=50;	//距离顶部高度
+		if(bool){
+			right_nav.stop(true,false).animate({top:nav_top+$(window).scrollTop()},400);
+		}else{
+			right_nav.stop(true,false).animate({top:nav_top},300);
+		}	
+		right_nav.show();
+	}
+	
+	if(!+'v1' && !window.XMLHttpRequest ){
+		$(window).bind('scroll resize',function(){
+			if($(window).scrollTop()>700){
+				right_nav_position(true);			
+			}else{
+				right_nav.hide();	
+			}
+		})
+	}else{
+		$(window).bind('scroll resize',function(){
+			if($(window).scrollTop()>700){
+				right_nav_position();
+			}else{
+				right_nav.hide();
+			}
+		})
+	}	
+}
+float_nav('#float_r');
+float_nav('#float_l');
+</script></body>
+</html>

@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+<struts>
+    <package name="records" namespace="/records" extends="struts-default">
+    	
+     	 <action name="recordsAction_*" class="cn.itcast.action.records.RecordsAction" method="{1}">
+            <result name="success" type="chain">
+				<param name="actionName">recordsActionList</param>
+                <param name="namespace">/records</param>
+			</result>
+        </action>
+        <action name="recordsActionList" class="cn.itcast.action.records.RecordsActionList">
+            <result name="list">/WEB-INF/recordspage/recordslist.jsp</result>
+        </action>
+        
+    </package>
+</struts>

@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="cn.itcast.domain">
+
+	<class name="Usermain">
+		<id name="um_id">
+			<generator class="foreign">
+			<param name="property">uservice</param>
+			 </generator>
+		</id>
+		<property name="username" unique="true" not-null="true"/>
+		<property name="user_password" not-null="true"/>
+		<property name="user_nickname"/>
+		<property name="regtime"/>
+		<property name="lastlogtime"/>
+		<property name="prompt_problem"/>
+		<property name="answer"/>
+		<property name="log_num"/>
+		<property name="IP"/>
+		<property name="integral"/>
+		<property name="jf"/>
+		<one-to-one name="uservice" lazy="false" constrained="true" cascade="all" />
+		<many-to-one name="role" lazy="false"/>
+		
+		
+	</class>
+
+</hibernate-mapping>

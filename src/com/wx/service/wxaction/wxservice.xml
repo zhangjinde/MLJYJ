@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+   
+<struts>
+    <package name="wxaction" namespace="/" extends="struts-default" >
+        <action name="wxTextService_*" class="com.wx.service.wxaction.WxTextService" method="{1}">
+        	<result name="default">/WEB-INF/wx/login_app.jsp</result>
+        	<result name="nobinding">/WEB-INF/wx/nobinding.html</result>
+        	<result name="userinfo">/wx_user/wxuserinfo.jsp</result>
+        
+        </action>
+		<action name="wxjyjService_*" class="com.wx.service.wxaction.WxjyjService" method="{1}">
+        	<result name="photo">/WEB-INF/wx/myphoto.jsp</result>
+        	<result name="nobinding">/WEB-INF/wx/nobinding.html</result>
+        	<result name="pic">/WEB-INF/wx/pics.jsp</result>
+        	<result name="androidshare">/WEB-INF/wx/wxsharepics.jsp</result>
+			<result name="successupload" type="chain">
+				<param name="actionName">wxjyjService_pics</param>
+            </result>
+			
+        </action>
+		<action name="wxSupport_*" class="com.wx.service.wxaction.WxSupport" method="{1}">
+			
+		</action>
+		<action name="wxPersonalService_*" class="com.wx.service.wxaction.WxPersonalService" method="{1}">
+			<result name="nobinding">/WEB-INF/wx/nobinding.html</result>
+			
+		</action>
+		</package>
+</struts>

@@ -1,0 +1,18 @@
+
+.login__submit {
+	text-align:center;
+	margin:0 auto;
+  position: relative;
+  width: 96%;
+  height: 4rem;
+  margin: 5rem 0 2.2rem;
+  color:#EDEDED;
+  background: #4FA8AF;
+  font-size: 2.5rem;
+  font-weight:bold;
+  border-radius: 3rem;
+  cursor: pointer;
+  overflow: hidden;
+ -webkit-transition: width 0.3s 0.15s, font-size 0.1s 0.15s;
+ transition: width 0.3s 0.15s, font-size 0.1s 0.15s;   
+}

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="cn.itcast.domain">
+
+	<class name="Permissions">
+		<id name="permissions_id">
+			<generator class="native" />
+		</id>
+		<property name="permission_name"/>
+		<property name="permission_describe"/>
+	
+		
+		
+		<set name="roles" table="RolesPermissions" inverse="false" lazy="false">
+		<key column="rp_permission_id"/>
+			<many-to-many class="Roles" column="rp_role_id"/>
+		</set>
+		
+		
+	</class>
+
+</hibernate-mapping>

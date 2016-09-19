@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <title>ECharts</title>
+</head>
+<body>
+    <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+    <div id="main" style="height:400px; width:900px;"></div>
+    <!-- ECharts单文件引入 -->
+    <script src="http://www.jyj.me/js/echarts/echarts.js">
+    </script>
+    <script src="http://www.jyj.me/js/jquery-1.9.1.min.js">
+    </script>
+    <script type="text/javascript">
+        // 路径配置
+        require.config({
+            paths: {
+                echarts: 'http://www.jyj.me/js/echarts'
+            }
+        });
+        
+        // 使用
+        require(
+            [
+                'echarts',
+                'echarts/chart/bar' // 使用柱状图就加载bar模块，按需加载
+            ],
+            function (ec) {
+                // 基于准备好的dom，初始化echarts图表
+                var myChart = ec.init(document.getElementById('main')); 
+                
+               var placeHoledStyle = {
+    normal:{
+        barBorderColor:'rgba(0,0,0,0)',
+        color:'rgba(0,0,0,0)'
+    },
+    emphasis:{
+        barBorderColor:'rgba(0,0,0,0)',
+        color:'rgba(0,0,0,0)'
+    }
+};
+var dataStyle = { 
+    normal: {
+        label : {
+            show: true,
+            position: 'insideLeft',
+            formatter: '{c}%'
+        }
+    }
+};
+option = {
+    title: {
+        text: '市场分析',
+        subtext: '数据来自中国报告大厅',
+        sublink: ''
+    },
+    tooltip : {
+        trigger: 'axis',
+        axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+            type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+        },
+        formatter : '{b}<br/>{a0}:{c0}%<br/>{a2}:{c2}%<br/>{a4}:{c4}%<br/>{a6}:{c6}%'
+    },
+    legend: {
+        y: 55,
+        itemGap : document.getElementById('main').offsetWidth / 8,
+        data:['影楼数量约35万', '利润比重','增幅比例', '减幅比例']
+    },
+    toolbox: {
+        show : true,
+        feature : {
+            mark : {show: true},
+            dataView : {show: true, readOnly: false},
+            restore : {show: true},
+            saveAsImage : {show: true}
+        }
+    },
+    grid: {
+        y: 80,
+        y2: 30
+    },
+    xAxis : [
+        {
+            type : 'value',
+            position: 'top',
+            splitLine: {show: false},
+            axisLabel: {show: false}
+        }
+    ],
+    yAxis : [
+        {
+            type : 'category',
+            splitLine: {show: false},
+            data : ['综合性影楼', '婚纱影楼', '儿童影楼']
+        }
+    ],
+    series : [
+        {
+            name:'影楼数量约35万',
+            type:'bar',
+            stack: '总量',
+            itemStyle : dataStyle,
+            data:[44.74, 42.76, 12.5]
+        },
+        {
+            name:'影楼数量约35万',
+            type:'bar',
+            stack: '总量',
+            itemStyle: placeHoledStyle,
+            data:[55.26, 57.24, 87.5]
+        },
+        {
+            name:'利润比重',
+            type:'bar',
+            stack: '总量',
+            itemStyle : dataStyle,
+            data:[30, 32, 32]
+        },
+        {
+            name:'利润比重',
+            type:'bar',
+            stack: '总量',
+            itemStyle: placeHoledStyle,
+            data:[70, 68, 68]
+        },
+        {
+            name:'增幅比例',
+            type:'bar',
+            stack: '总量',
+            itemStyle : dataStyle,
+            data:[2.52, 0, 0]
+        },
+        {
+            name:'增幅比例',
+            type:'bar',
+            stack: '总量',
+            itemStyle: placeHoledStyle,
+            data:[97.48, 100, 100]
+        },
+        {
+            name:'减幅比例',
+            type:'bar',
+            stack: '总量',
+            itemStyle : dataStyle,
+            data:[0, 21.44, 9.93]
+        },
+        {
+            name:'减幅比例',
+            type:'bar',
+            stack: '总量',
+            itemStyle: placeHoledStyle,
+            data:[100, 78.56, 90.07]
+        }
+    ]
+};
+                    
+                    
+                    
+        
+                // 为echarts对象加载数据 
+                myChart.setOption(option); 
+				
+            }
+        );
+    </script>
+</body>

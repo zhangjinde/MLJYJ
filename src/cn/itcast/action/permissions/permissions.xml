@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+<struts>
+    <package name="permissions" namespace="/permissions" extends="struts-default">
+    	
+        <action name="permissionsAction_*" class="cn.itcast.action.permissions.PermissionsAction" method="{1}">
+        <!-- 
+        <interceptor-ref name="defaultStack"/>
+        <interceptor-ref name="token"/>
+         -->
+            <result name="addUI">/WEB-INF/permissionspage/addpermissionsUI.jsp</result>
+            <result name="update">/WEB-INF/permissionspage/update.jsp</result>
+            <result name="success" type="chain">
+				<param name="actionName">permissionsActionList</param>
+                <param name="namespace">/permissions</param>
+			</result>
+            <result name="invalid.token">/WEB-INF/permissionspage/addpermissionsUI.jsp</result>
+        </action>
+        <action name="permissionsActionList" class="cn.itcast.action.permissions.PermissionsActionList">
+            <result name="list">/WEB-INF/permissionspage/permissionslist.jsp</result>
+        </action>
+        
+    </package>
+</struts>

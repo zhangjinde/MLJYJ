@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<!-- 默认的视图主题 -->
+    <constant name="struts.ui.theme" value="simple" />
+
+	 <constant name="struts.objectFactory" value="spring" />
+	<constant name="struts.multipart.maxSize" value="3145728"/>
+	<constant name="struts.multipart.saveDir" value="/tmp"></constant>
+	 
+	 <include file="cn/itcast/action/studio/studio.xml"/>
+	 <include file="cn/itcast/action/roles/roles.xml"/>
+	 <include file="cn/itcast/action/permissions/permissions.xml"/>
+	 <include file="cn/itcast/action/photoalbumclass/pac.xml"/>
+	 <include file="cn/itcast/action/family/family.xml"/>
+	 <include file="cn/itcast/action/login/login.xml"/>
+	 <include file="cn/itcast/action/user/user.xml"/>
+	 <include file="cn/itcast/action/records/records.xml"/>
+	 <include file="cn/itcast/action/sil/sil.xml"/>
+	 <include file="cn/itcast/action/usercenter/usercenter.xml"/>
+	 <include file="cn/itcast/action/search/search.xml"/>
+	 <include file="cn/itcast/action/gg/gg.xml"/>
+	 <include file="cn/itcast/action/remind/remind.xml"/>
+	 <include file="cn/itcast/action/order/order.xml"/>
+	 <include file="cn/itcast/action/backorder/backorder.xml"/>
+	 <include file="cn/itcast/action/yp/yp.xml"/>
+	 <include file="com/wx/service/wxaction/wxservice.xml"/>
+	 <include file="cn/itcast/action/index/index.xml"/>
+	 <include file="cn/itcast/action/android/android.xml"/>
+	 <include file="cn/itcast/action/settings/settings.xml"/>
+	 <include file="cn/itcast/action/admin/admin.xml"/>
+	 <include file="cn/itcast/action/app/app.xml"/>
+	
+</struts>

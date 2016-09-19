@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+<struts>
+    <package name="family" namespace="/family" extends="struts-default">
+    	
+        <action name="familyAction_*" class="cn.itcast.action.family.FamilyAction" method="{1}">
+        <!-- 
+        <interceptor-ref name="defaultStack"/>
+        <interceptor-ref name="token"/>
+         -->
+            
+            <result name="childUI">/WEB-INF/familypage/addchildUI.jsp</result>
+            <result name="addUI">/WEB-INF/familypage/addfamilyUI.jsp</result>
+            <result name="update">/WEB-INF/familypage/update.jsp</result>
+            <result name="success" type="chain">
+				<param name="actionName">familyActionList</param>
+                <param name="namespace">/family</param>
+			</result>
+			<result name="adduserUI">/WEB-INF/familypage/adduserUI.jsp</result>
+			<result name="getusers">/WEB-INF/familypage/getusers.jsp</result>
+			<result name="xflist">/WEB-INF/familypage/xflist.jsp</result>
+			<result name="addxfUI">/WEB-INF/familypage/addxfUI.jsp</result>
+			<result name="updatexfUI">/WEB-INF/familypage/updatexfUI.jsp</result>
+			<result name="allinfo">/WEB-INF/familypage/allinfo.jsp</result>
+			<result name="savexf" type="chain">
+			<param name="actionName">familyAction_xflist</param>
+                <param name="namespace">/family</param>
+			</result>
+            <result name="invalid.token">/WEB-INF/familypage/addfamilyUI.jsp</result>
+            
+        </action>
+        <action name="fuserAction_*" class="cn.itcast.action.family.FuserAction"  method="{1}">
+        	<result name="update">/WEB-INF/familypage/fuserupdate.jsp</result>
+        	<result name="childUI">/WEB-INF/familypage/updatechild.jsp</result>
+            <result name="success" type="chain">
+				<param name="actionName">familyAction_getusers</param>
+                <param name="namespace">/family</param>
+			</result>
+			<result name="addpa" type="chain">
+				<param name="actionName">upActionList</param>
+                <param name="namespace">/family</param>
+            </result>
+			<result name="loginagain">/loginagain.jsp</result>
+        </action>
+        <action name="familyActionList" class="cn.itcast.action.family.FamilyActionList">
+            <result name="list">/WEB-INF/familypage/familylist.jsp</result>
+            <result name="loginagain">/loginagain.jsp</result>
+        </action>
+        <action name="upActionList" class="cn.itcast.action.user.PaActionList">
+            <result name="palist">/WEB-INF/userpage/palist.jsp</result>
+        </action>
+		<action name="lovePwdAction_*" class="cn.itcast.action.family.LovePwdAction" method="{1}">
+			</action>
+		<action name="homeTree_*" class="cn.itcast.action.family.HomeTree" method="{1}">
+			</action>
+    </package>
+</struts>

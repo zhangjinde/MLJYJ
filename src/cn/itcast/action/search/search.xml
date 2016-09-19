@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+<struts>
+    <package name="search" namespace="/search" extends="struts-default">
+    			   
+        <action name="searchAction_*" class="cn.itcast.action.search.SearchAction" method="{1}">
+      
+            <result name="studio">/WEB-INF/search/studio.jsp</result>
+            <result name="family">/WEB-INF/search/family.jsp</result>
+            <result name="user">/WEB-INF/search/user.jsp</result>
+            <result name="admin">/WEB-INF/search/admin.jsp</result>
+            
+        </action>
+    </package>
+</struts>

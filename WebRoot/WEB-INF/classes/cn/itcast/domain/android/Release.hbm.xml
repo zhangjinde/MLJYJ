@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="cn.itcast.domain.android">
+
+	<class name="Release" table="releasetab">
+		<id name="re_id">
+			<generator class="native"/>
+		</id>
+		<property name="re_content"/>
+		<property name="re_media"/>
+		<property name="headurl"/>
+		<property name="nickname"/>
+		<property name="dianancount"/>
+		<property name="pingluncount"/>
+		<property name="u_id"/>
+		<property name="re_city"/>
+		<property name="re_media_img"/>
+	</class>
+
+</hibernate-mapping>

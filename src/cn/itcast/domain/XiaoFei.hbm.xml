@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="cn.itcast.domain">
+
+	<class name="XiaoFei">
+		<id name="xf_id">
+			<generator class="native"/>
+		</id>
+		<property name="xf_project"/>
+		<property name="xf_money"/>
+		<property name="xf_other"/>
+		<many-to-one name="xf_family"/>
+	</class>
+
+</hibernate-mapping>

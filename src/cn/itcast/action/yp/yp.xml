@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+<struts>
+    <package name="yp" namespace="/yp" extends="struts-default">
+    	
+        <action name="employeesAction_*" class="cn.itcast.action.yp.EmployeesAction" method="{1}">
+				<result name="eUI">/WEB-INF/yp/e/eUI.jsp</result>
+				<result name="success" type="chain">
+					<param name="actionName">employeesActionList</param>
+					<param name="namespace">/yp</param>
+				</result>
+        </action>
+		<action name="employeesActionList_*" class="cn.itcast.action.yp.EmployeesActionList" method="{1}">
+			<result name="list">/WEB-INF/yp/person.jsp</result>
+		</action>
+        <action name="provinceCityAction_*" class="cn.itcast.action.yp.ProvinceCityAction" method="{1}">
+        </action>
+        <action name="placeOrderAction_*" class="cn.itcast.action.yp.PlaceOrderAction" method="{1}">
+        	<result name="list">/WEB-INF/yp/orderlist.jsp</result>
+        	<result name="success" type="chain">
+					<param name="actionName">placeOrderAction_list</param>
+					<param name="namespace">/yp</param>
+				</result>
+        </action>
+    </package>
+</struts>

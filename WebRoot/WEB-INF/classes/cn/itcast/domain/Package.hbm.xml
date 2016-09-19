@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="cn.itcast.domain">
+
+	<class name="Package">
+		<id name="package_id">
+			<generator class="native" />
+		</id>
+		<property name="package_name" unique="true" not-null="true"/>
+		<property name="package_price"/>
+		<property name="package_instructions"/>
+		<property name="package_pic_url"/>
+		
+	
+		
+		
+	</class>
+
+</hibernate-mapping>

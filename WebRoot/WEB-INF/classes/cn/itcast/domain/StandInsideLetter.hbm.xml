@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="cn.itcast.domain">
+
+	<class name="StandInsideLetter">
+		<id name="sil_id">
+			<generator class="native" />
+		</id>
+		<property name="sil_title" not-null="true"/>
+		<property name="sil_user_send" not-null="true"/>
+		<property name="sil_user_accept" not-null="true"/>
+		<property name="sil_content"/>
+		<property name="isread"/>
+		
+	
+		
+		
+	</class>
+
+</hibernate-mapping>

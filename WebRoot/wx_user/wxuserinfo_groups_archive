@@ -1,0 +1,128 @@
+<html>
+<!--此文件是由Google Web Designer自动生成的。请勿手动修改。-->
+
+<head></head>
+
+<body>
+  <div data-gwd-group-def="form" data-gwd-group-class="gwd-grp-1dsp" style="display:none" data-gwd-node="true">
+    <style data-gwd-grp-rule="true">
+      .gwd-play-animation [data-gwd-group="form"].gwd-pause-animation .gwd-gen-1ob2gwdanimation {
+        -webkit-animation-play-state: paused !important;
+      }
+    </style>
+    <style data-gwd-grp-rule="true">
+      [data-gwd-group="form"] .gwd-grp-1dsp.gwd-div-13rb {
+        -webkit-transform: translate3d(15px, 0px, 0px);
+        -webkit-transform-style: preserve-3d;
+      }
+    </style>
+    <style data-gwd-grp-rule="true">
+      [data-gwd-group="form"] {
+        width: 450px;
+        height: 84px;
+      }
+    </style>
+    <style data-gwd-grp-rule="true">
+      [data-gwd-group="form"] .gwd-grp-1dsp.gwd-div-1fh6 {
+        width: 450px;
+        -webkit-transform: translate3d(85px, 5px, 0px);
+        -webkit-transform-style: preserve-3d;
+        left: -85px;
+        top: -5px;
+      }
+    </style>
+    <style data-gwd-grp-rule="true">
+      [data-gwd-group="form"] .gwd-grp-1dsp.gwd-div-154v {
+        width: 450px;
+        -webkit-transform: translate3d(85px, 5px, 0px);
+        -webkit-transform-style: preserve-3d;
+        left: -85px;
+        top: -5px;
+      }
+    </style>
+    <style data-gwd-grp-rule="true">
+      [data-gwd-group="form"] .gwd-grp-1dsp.gwd-div-sof7 {
+        width: 450px;
+        -webkit-transform: translate3d(85px, 5px, 0px);
+        -webkit-transform-style: preserve-3d;
+        left: -85px;
+        top: -5px;
+      }
+    </style>
+    <style data-gwd-grp-rule="true">
+      [data-gwd-group="form"] .gwd-grp-1dsp.gwd-div-13wk {
+        width: 450px;
+        -webkit-transform: translate3d(85px, 5px, 0px);
+        -webkit-transform-style: preserve-3d;
+        left: -85px;
+        top: -5px;
+      }
+    </style>
+    <style data-gwd-grp-rule="true">
+      @-webkit-keyframes gwd-gen-1ob2gwdanimation_gwd-keyframes {
+        0% {
+          opacity: 0;
+          -webkit-animation: linear;
+        }
+        75% {
+          opacity: 0;
+          -webkit-animation: linear;
+        }
+        100% {
+          opacity: 1;
+          -webkit-animation: linear;
+        }
+      }
+    </style>
+    <style data-gwd-grp-rule="true">
+      .gwd-play-animation [data-gwd-group="form"] .gwd-gen-1ob2gwdanimation {
+        -webkit-animation: gwd-gen-1ob2gwdanimation_gwd-keyframes 1.2s linear 0s 1 normal forwards;
+      }
+    </style>
+    <style data-gwd-grp-rule="true">
+      [data-gwd-group="form"] .gwd-grp-1dsp.gwd-input-t6br {
+        -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+        -webkit-transform-style: preserve-3d;
+      }
+    </style>
+    <script data-gwd-grp-events="true">
+      []
+    </script>
+    <img src="data:image/png;base64,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"
+    data-gwd-grp-preview-image="true">
+    <div class="gwd-div-13rb gwd-grp-1dsp gwd-div-1fh6" data-gwd-node="true">
+      账号：
+      <input type="textfiled" class="gwd-grp-1dsp gwd-input-t6br" data-gwd-node="true">
+    </div>
+    <div class="gwd-div-13rb gwd-grp-1dsp gwd-div-154v" data-gwd-node="true">
+      密码：
+      <input type="password" class="gwd-grp-1dsp" data-gwd-node="true">
+    </div>
+    <div class="gwd-div-13rb gwd-grp-1dsp gwd-div-sof7" data-gwd-node="true">
+      昵称：
+      <input type="password" class="gwd-grp-1dsp" data-gwd-node="true">
+    </div>
+    <div class="gwd-div-13rb gwd-grp-1dsp gwd-div-13wk" data-gwd-node="true">
+      姓名：
+      <input type="password" class="gwd-grp-1dsp" data-gwd-node="true">
+    </div>
+    <div class="gwd-div-13rb gwd-grp-1dsp" data-gwd-node="true">
+      电话：
+      <input type="password" class="gwd-grp-1dsp" data-gwd-node="true">
+    </div>
+    <div class="gwd-div-13rb gwd-grp-1dsp" data-gwd-node="true">
+      QQ：
+      <input type="password" class="gwd-grp-1dsp" data-gwd-node="true">
+    </div>
+    <div class="gwd-div-13rb gwd-grp-1dsp" data-gwd-node="true">
+      微信：
+      <input type="password" class="gwd-grp-1dsp" data-gwd-node="true">
+    </div>
+    <div class="gwd-div-13rb gwd-grp-1dsp" data-gwd-node="true">
+      单位：
+      <input type="password" class="gwd-grp-1dsp" data-gwd-node="true">
+    </div>
+  </div>
+</body>
+
+</html>

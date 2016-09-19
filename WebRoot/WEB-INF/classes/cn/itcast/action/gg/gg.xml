@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+   
+<struts>
+    <package name="gg" namespace="/gonggao" extends="struts-default" >
+    	
+        <action name="ggActionList" class="cn.itcast.action.gg.GgActionList">
+            <result name="list">/WEB-INF/gg/list.jsp</result>
+        </action>
+        <action name="ggAction_*" class="cn.itcast.action.gg.GgAction" method="{1}">
+        	<result name="UI">/WEB-INF/gg/ui.jsp</result>
+        	<result name="success" type="chain">
+        		<param name="actionName">ggActionList</param>
+        		<param name="namespace">/gonggao</param>
+        	</result>
+        	<result name="update">/WEB-INF/gg/update.jsp</result>
+        </action>
+    </package>
+</struts>

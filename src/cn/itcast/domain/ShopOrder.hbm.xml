@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="cn.itcast.domain">
+
+	<class name="ShopOrder">
+		
+		<id name="id">
+		<generator class="native"/>
+		</id>
+		<property name="ordernum"/>
+		<property name="ordername"/>
+		<property name="ordermoney"/>
+		<property name="order_username"/>
+		<property name="order_usertel"/>
+		<property name="ispay"/>
+		<property name="orderinfo"/>
+		<property name="ischeck"/>
+		
+	</class>
+
+</hibernate-mapping>

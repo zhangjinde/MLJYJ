@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+<struts>
+    <package name="usercenter" namespace="/usercenter" extends="struts-default">
+    	
+        <action name="userCenter_*" class="cn.itcast.action.usercenter.UserCenter" method="{1}">
+
+            <result name="UI">/WEB-INF/usercenter/userinfo.jsp</result>
+            <result name="changepic">/WEB-INF/usercenter/changepic.jsp</result>
+            
+            <result name="updatepic">/WEB-INF/usercenter/changepic.jsp</result>
+         
+           
+            <result name="success" type="chain">
+				<param name="actionName">userCenter_goUI</param>
+                <param name="namespace">/usercenter</param>
+			</result>
+        </action>
+        <action name="userStatus_*" class="cn.itcast.action.usercenter.UserStatusAction" method="{1}">
+        	<result name="index">/WEB-INF/usercenter/userindex.jsp</result>
+        	<result name="success"  type="chain">
+        	<param name="actionName">userStatus_index</param>
+                <param name="namespace">/usercenter</param>
+        	</result>
+        	<result name="error">/WEB-INF/usercenter/userindex.jsp</result>
+        	<result name="addui">/WEB-INF/usercenter/userindexeidt.jsp</result>
+        	<result name="resultui">/WEB-INF/usercenter/userindexresult.jsp</result>
+        	
+        	
+        </action>
+        
+    </package>
+</struts>

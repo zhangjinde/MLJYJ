@@ -1,0 +1,252 @@
+﻿body 
+{
+	width:100%;
+	min-width:1000px;
+	padding:0;
+	margin:0;
+	font-family:Calibri,宋体;
+	font-size:12px;
+	color:#737373;
+	/*background:#c8c8c8 url(../images/bg.jpg) repeat-y center top;*/
+	background:#c8c8c8;
+}
+p,h2,h1,h3,ul{ padding:0; margin:0;}
+ul{ list-style-type:none;}
+a:link,a:visited{ color:#737373; text-decoration:none;}
+a:hover{ color:#000;}
+img{ border:0;}  
+
+.container
+{
+    width:982px;
+    margin:0 auto;
+}
+.containerwrapper
+{
+    float:left;
+    width:100%;
+    height:100%;
+    background:#fff;
+}
+.topbar
+{
+    float:left;
+    width:100%;
+    height:82px;
+    background:#eeeeee;
+}
+.logo
+{
+    float:left;
+    width:150px;
+    height:23px;
+    font-size:0;
+    text-indent:-9999px;
+    margin:30px 0 0 23px;
+    background:url(../images/logo.png) no-repeat;
+}
+.topbar a.contact
+{
+    float:left;
+    margin:45px 0 0 10px;
+    height:16px;
+    line-height:16px;
+    font-family:黑体;
+    color:#808080;
+    font-size:11px;
+}
+.topbar a.contact:hover
+{
+    color:#000;
+}
+.banner
+{
+    float:left;
+    width:100%;
+    margin-top:5px;
+}
+.banner .slidebox
+{
+    float:left;
+    margin-left:45px;
+    width:890px;
+    height:470px;
+    border:solid 1px #c6c0bf;
+    position:relative;
+    z-index:100;
+}
+.banner .cycle
+{
+    float:left;
+    width:890px;
+    height:470px;
+    overflow:hidden;
+}
+.banner .cycle img
+{
+    width:890px;
+    min-height:470px;
+}
+.banner .slidebox a.prev,.banner .slidebox a.next
+{
+    position:absolute;
+    left:0;
+    width:65px;
+    height:470px;
+    cursor:pointer;
+    background:url(../images/s01_1.png) repeat;
+    z-index:50;
+}
+.banner .slidebox a.prev:hover,.banner .slidebox a.next:hover
+{
+    background-image:url(../images/s01.png);
+}
+.banner .slidebox a.next
+{
+    left:auto;
+    right:0;
+}
+.banner .slidebox a.prev span,.banner .slidebox a.next span
+{
+    float:left;
+    width:34px;
+    height:67px;
+    margin:202px 0 0 18px;
+    background:url(../images/b_al.png) no-repeat;
+}
+.banner .slidebox a.next span
+{
+    float:right;
+    margin:202px 18px 0 0;
+    background:url(../images/b_ar.png) no-repeat;
+}
+.banner .slidebox .pager
+{
+    position:absolute;
+    left:0;
+    bottom:5px;
+    width:100%;
+    height:9px;
+    text-align:center;
+    z-index:50;
+}
+.banner .slidebox .pager a
+{
+    margin:0 3px;
+    width:9px;
+    height:9px;
+    font-size:0;
+    color:#c8c8c8;
+    background:#c8c8c8;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    display:inline-block;
+}
+.banner .slidebox .pager a:hover,.banner .slidebox .pager a.activeSlide
+{
+    color:#fff;
+    background:#fff;
+}
+.mod-catalogo-box
+{
+    float:left;
+    width:892px;
+    margin-left:44px;
+    margin-top:5px;
+    padding-bottom:17px;
+}
+.mod-catalogo-box a
+{
+    float:left;
+    width:365px;
+    height:150px;
+    background:#c8c8c8;
+    position:relative;
+}
+.mod-catalogo-box a img
+{
+	width:365px;
+	height:150px;
+}
+.mod-catalogo-box a .info-title
+{
+    position:absolute;
+    left:0;
+    top:0;
+    width:365px;
+    height:150px;
+    background:url(../images/s02.png) repeat;
+    display:table;
+    overflow:hidden;
+    opacity:0;
+    filter: alpha(opacity=0);
+}
+.mod-catalogo-box a .info-title .name
+{
+    width:365px;
+    height:150px;
+    display:table-cell;
+    vertical-align:middle;
+    text-align:center;
+    font-size:11px;
+    font-family:Arial 微软雅黑;
+    color:#000;
+    letter-spacing:1px;
+    text-transform:uppercase;
+}
+.mod-catalogo-box a .info-title .name .yb
+{
+     border-top:solid 1px #4f4d4d;
+     padding:0 1px;
+     display:inline-block;
+}
+.mod-catalogo-box a:hover .info-title
+{
+    transition: opacity 0.5s ease-out 0s;
+    opacity:1;
+    filter: alpha(opacity=100);
+}
+
+.mod-contact-box
+{
+    float:left;
+    width:530px;
+    margin-top:27px;
+    margin-left:251px;
+    border:solid 1px #949494;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    margin-bottom:50px;
+}
+.mod-contact-box .logoarea
+{
+    float:left;
+    width:100%;
+    height:239px;
+    background:#f5f5f5;
+    text-align:center;
+}
+.mod-contact-box .logoarea img
+{
+    margin-top:49px;
+    display:inline-block;
+}
+.mod-contact-box .cont
+{
+    float:left;
+    width:100%;
+    padding-top:25px;
+    padding-bottom:35px;
+}
+.mod-video-box
+{
+    float:left;
+    margin:35px 20px 0;
+    width:942px;
+    line-height:25px;
+    padding-bottom:50px;
+}
+.mod-video-box img
+{
+    max-width:100%;
+}

@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+<struts>
+    <package name="sil" namespace="/sil" extends="struts-default">
+    	
+        <action name="sILAction_*" class="cn.itcast.action.sil.SILAction" method="{1}">
+        <!-- 
+        <interceptor-ref name="defaultStack"/>
+        <interceptor-ref name="token"/>
+         -->
+            <result name="findaccept">/WEB-INF/silpage/findaccept.jsp</result>
+            <result name="writeUI">/WEB-INF/silpage/write.jsp</result>
+            <result name="delaccept" type="chain">
+				<param name="actionName">sILActionAcceptList</param>
+                <param name="namespace">/sil</param>
+			</result>
+			<result name="success" type="chain">
+				<param name="actionName">sILActionAcceptList</param>
+                <param name="namespace">/sil</param>
+			</result>
+            
+        </action>
+        <action name="sILActionAcceptList" class="cn.itcast.action.sil.SILActionAcceptList">
+            <result name="list">/WEB-INF/silpage/accept.jsp</result>
+        </action>
+        
+    </package>
+</struts>

@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="cn.itcast.domain">
+
+	<class name="Studio">
+		<id name="studio_id">
+			<generator class="native" />
+		</id>
+		<property name="studio_name"/>
+		<property name="studio_instructions"/>
+		<property name="studio_address"/>
+		<property name="studio_phone"/>
+
+	</class>
+
+</hibernate-mapping>

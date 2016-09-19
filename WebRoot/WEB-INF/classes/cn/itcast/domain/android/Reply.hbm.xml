@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="cn.itcast.domain.android">
+
+	<class name="Reply">
+		<id name="r_id">
+			<generator class="native"/>
+		</id>
+		<property name="re_id"/>
+		<property name="fbus_id"/>
+		<property name="hfus_id"/>
+		<property name="hfcontent"/>
+		<property name="hftime"/>
+	</class>
+
+</hibernate-mapping>

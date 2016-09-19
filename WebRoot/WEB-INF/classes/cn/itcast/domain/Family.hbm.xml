@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="cn.itcast.domain">
+
+	<class name="Family" >
+		<id name="family_id">
+			<generator class="native"/>
+		</id>
+		<property name="family_address"/>
+		<property name="home_phone"/>
+		<property name="lovepwd"/>
+		<property name="consumption"/>
+		<property name="marrydate"/>
+		<property name="childbirth"/>
+		<property name="home_instructions"/>
+		<property name="handover_studio"/>
+		<property name="postnum"/>
+		<property name="islun"/>
+		<property name="um_id"/>
+		<property name="treedone"/>
+		<many-to-one name="family_studio" lazy="false"/>
+		
+		
+		
+	</class>
+
+</hibernate-mapping>

@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+<struts>
+    <package name="photoAlbumClass" namespace="/photoAlbumClass" extends="struts-default">
+    	
+        <action name="photoAlbumClassAction_*" class="cn.itcast.action.photoalbumclass.PhotoAlbumClassAction" method="{1}">
+        <!-- 
+        <interceptor-ref name="defaultStack"/>
+        <interceptor-ref name="token"/>
+         -->
+            <result name="addUI">/WEB-INF/pacpage/addpacUI.jsp</result>
+            <result name="update">/WEB-INF/pacpage/update.jsp</result>
+            <result name="success" type="chain">
+				<param name="actionName">photoAlbumClassActionList</param>
+                <param name="namespace">/photoAlbumClass</param>
+			</result>
+            <result name="invalid.token">/WEB-INF/pacpage/addpacUI.jsp</result>
+        </action>
+        <action name="photoAlbumClassActionList" class="cn.itcast.action.photoalbumclass.PhotoAlbumClassActionList">
+            <result name="list">/WEB-INF/pacpage/paclist.jsp</result>
+        </action>
+        
+    </package>
+</struts>

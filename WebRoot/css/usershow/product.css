@@ -1,0 +1,27 @@
+#wrapper {
+	width:1000px;
+	margin:0 auto;
+	text-align:left;
+	overflow:visible;
+}
+
+/* Slider */
+#slider { width:1000px; padding:0; margin:0 auto; }
+
+div#slideshow { height:403px; border:0; overflow:hidden;}
+.slider-item { width: 100% !important; height: 403px; }
+.slider_content_inner img { border: none; }
+.controls-center { margin-left: auto; margin-right: auto; text-align:center;}
+#slider_controls { padding:10px 0 0 0; position: relative; margin:0 auto; z-index: 1000; text-align:center;}
+#slider_controls ul { margin:0 auto; padding:0; margin-left:49px;}
+#slider_controls ul li { float:left; display: block; list-style: none; padding-right:10px;}
+#slider_controls ul li a { background:#ebebeb; display: block; float: left; padding:5px;}
+#slider_controls ul li a:focus { outline: none; }
+#slider_controls ul li a:hover, #slider_controls ul li a.activeSlide { background:#ccc; }
+
+
+#p_foot{width:930px; height:60px; margin:0 auto;}
+
+#p_menu_01{width:250px; height:47px; float:left; padding-left:60px; background-image:url(/skin/jiayinji/images/product_foot_icon1.png); background-repeat:no-repeat; color:#fff; font-size:14px; line-height:23px;}
+#p_menu_02{width:250px; height:47px; float:left; padding-left:60px; background-image:url(/skin/jiayinji/images/product_foot_icon2.png); background-repeat:no-repeat; color:#fff; font-size:14px; line-height:23px;}
+#p_menu_03{width:250px; height:47px; float:left; padding-left:60px; background-image:url(/skin/jiayinji/images/product_foot_icon3.png); background-repeat:no-repeat; color:#fff; font-size:14px; line-height:23px;}

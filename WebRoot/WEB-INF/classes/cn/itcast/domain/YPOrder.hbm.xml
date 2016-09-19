@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="cn.itcast.domain">
+
+	<class name="YPOrder">
+		<id name="id">
+			<generator class="native"/>
+		</id>
+		<property name="pid"/>
+		<property name="cid"/>
+		<property name="sy_id"/>
+		<property name="sy_name"/>
+		<property name="hz_id"/>
+		<property name="hz_name"/>
+		<property name="user_name"/>
+		<property name="tel"/>
+		<property name="bz"/>
+		<property name="time"/>
+		<property name="ischeck"/>
+	</class>
+
+</hibernate-mapping>

@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <title>家印记圈子</title>
+</head>
+<body>
+    <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+    <div id="main" style="height:800px">
+    </div>
+    <!-- ECharts单文件引入 -->
+    <script src="http://www.jyj.me/js/echarts/echarts.js">
+    </script>
+    <script src="http://www.jyj.me/js/jquery-1.9.1.min.js">
+    </script>
+    <script type="text/javascript">
+        // 路径配置
+        require.config({
+            paths: {
+                echarts: 'http://www.jyj.me/js/echarts'
+            }
+        });
+        
+        // 使用
+        require(['echarts', 'echarts/chart/force' // 使用柱状图就加载bar模块，按需加载
+        ], function(ec){
+            // 基于准备好的dom，初始化echarts图表
+            var myChart = ec.init(document.getElementById('main'));
+            myChart.showLoading();
+            $.post("/SSH2_MLJYJ/family/homeTree_getinfo", {
+                name: "John",
+                time: "2pm"
+            }, function(res, textStatus){
+                if (textStatus == 'success') {
+                    if (res != null) {
+                        var option = optionFactory(res);//动态调用
+                        myChart.hideLoading();
+                        
+                        // 为echarts对象加载数据 
+                        myChart.setOption(option);
+                        var ecConfig = require('echarts/config');
+                        //设置点击事件
+                        function focus(param){
+                            var data = param.data;
+                            var links = option.series[0].links;
+                            var nodes = option.series[0].nodes;
+                            if (data.source !== undefined &&
+                            data.target !== undefined) { //点击的是边
+                                var sourceNode = nodes.filter(function(n){
+                                    return n.name == data.source
+                                })[0];
+                                var targetNode = nodes.filter(function(n){
+                                    return n.name == data.target
+                                })[0];
+                                alert("选中了边 " + sourceNode.name + ' -> ' + targetNode.name + ' (' + data.weight + ')');
+                            }
+                            else { // 点击的是点
+                                alert("选中了" + data.name + '(' + data.value + ')');
+                            }
+                        }
+                        myChart.on(ecConfig.EVENT.CLICK, focus)
+                        
+                        myChart.on(ecConfig.EVENT.FORCE_LAYOUT_END, function(){
+                            console.log(myChart.chart.force.getPosition());
+                        });
+                    }
+                }
+            });
+            
+        });
+        function optionFactory(res){
+            var option = {
+                title: {
+                    text: '家庭关系：爱情密码',
+                    subtext: '数据来自家印记',
+                    x: 'right',
+                    y: 'bottom'
+                },
+                tooltip: {
+                    trigger: 'item',
+                    formatter: '{a} : {b}'
+                },
+                toolbox: {
+                    show: true,
+                    feature: {
+                        restore: {
+                            show: true
+                        },
+                        magicType: {
+                            show: true,
+                            type: ['force', 'chord']
+                        },
+                        saveAsImage: {
+                            show: true
+                        }
+                    }
+                },
+                legend: {
+                    x: 'left',
+                    data: ['配偶', '子女', '父母', '亲属']
+                },
+                series: [{
+                    type: 'force',
+                    name: "家印记",//移动到节点时显示的前缀
+                    ribbonType: false,
+                    categories: [//节点分类
+                    {
+                        name: '人物'//本人0
+                    }, {
+                        name: '配偶',//直系亲人1
+                        itemStyle: {
+                            normal: {
+                                color: '#EE11EE'
+                            }
+                        }
+                    }, {
+                        name: '子女'//本人2
+                    }, {
+                        name: '父母'//本人3
+                    }, {
+                        name: '亲属'//非直系4
+                    }],
+                    itemStyle: {
+                        normal: {
+                            label: {
+                                show: true,
+                                textStyle: {
+                                    color: '#333'
+                                }
+                            },
+                            nodeStyle: {
+                                brushType: 'both',
+                                borderColor: 'rgba(51,133,255,0.4)',
+                                borderWidth: 1
+                            },
+                            linkStyle: {
+                                type: 'curve',//曲线
+                                color: '#3385FF'
+                            }
+                        },
+                        
+                        emphasis: {
+                            label: {
+                                show: false
+                                // textStyle: null      // 默认使用全局文本样式，详见TEXTSTYLE
+                            },
+                            nodeStyle: {                        //r: 30
+                            },
+                            linkStyle: {}
+                        }
+                    },
+                    useWorker: false,
+                    minRadius: 15,
+                    maxRadius: 25,
+                    gravity: 1.1,//向心力系数，系数越大则节点越往中心靠拢
+                    scaling: 1.1,
+                    roam: 'true',//是否开启滚轮缩放和拖拽漫游，默认为false（关闭），其他有效输入为true（开启），'scale'（仅开启滚轮缩放），'move'（仅开启拖拽漫游）
+                    nodes: [{
+                        category: 0,
+                        name: "本人",
+                        value: 10,
+                        label: '本人\n（当前查询人)',
+                        symbol: 'image://http://www.damndigital.com/wp-content/uploads/2010/12/steve-jobs.jpg',
+                        symbolSize: [60, 35],
+                        onclick: function(){
+                            alert("OK");
+                        }
+                    },//value为节点的大小
+                    {
+                        category: 1,
+                        name: '老婆',
+                        value: 10,
+                        label: '某某\n（可扩展）'
+                    }, {
+                        category: 2,
+                        name: '子',
+                        value: 2
+                    }, {
+                        category: 2,
+                        name: '女',
+                        value: 3
+                    }, {
+                        category: 3,
+                        name: '父',
+                        value: 3
+                    }, {
+                        category: 3,
+                        name: '母',
+                        value: 7
+                    }, {
+                        category: 4,
+                        name: '亲属1',
+                        value: 5
+                    }, {
+                        category: 4,
+                        name: '亲属2',
+                        value: 8
+                    }, {
+                        category: 4,
+                        name: '亲属3',
+                        value: 9
+                    }, {
+                        category: 4,
+                        name: '亲属4',
+                        value: 4
+                    }, {
+                        category: 4,
+                        name: '亲属5',
+                        value: 4
+                    }, {
+                        category: 4,
+                        name: '亲属6',
+                        value: 1
+                    }, ],
+                    links: [{
+                        source: '老婆',
+                        target: '本人',
+                        weight: 10,
+                        name: '老婆'
+                    }, {
+                        source: '子',
+                        target: '本人',
+                        weight: 1,
+                        name: '子'
+                    }, {
+                        source: '女',
+                        target: '本人',
+                        weight: 1,
+                        name: '女'
+                    }, {
+                        source: '父',
+                        target: '本人',
+                        weight: 1,
+                        name: '父'
+                    }, {
+                        source: '母',
+                        target: '本人',
+                        weight: 2,
+                        name: '母'
+                    }, {
+                        source: '亲属1',
+                        target: '本人',
+                        weight: 3,
+                        name: '亲属1'
+                    }, {
+                        source: '亲属2',
+                        target: '本人',
+                        weight: 3,
+                        name: '亲属2'
+                    }, {
+                        source: '亲属3',
+                        target: '本人',
+                        weight: 3,
+                        name: '亲属3'
+                    }, {
+                        source: '亲属4',
+                        target: '本人',
+                        weight: 3,
+                        name: '亲属4'
+                    }, {
+                        source: '亲属5',
+                        target: '本人',
+                        weight: 3,
+                        name: '亲属5'
+                    }, {
+                        source: '亲属6',
+                        target: '本人',
+                        weight: 3,
+                        name: '亲属6'
+                    }]
+                }]
+            
+            };
+            return option;
+        }
+    </script>
+    <button id="add">
+        add
+    </button>
+    <script>
+        $('#add').click(function(){
+			alert("ok");
+            var links = option.series[0].links;
+            var nodes = option.series[0].nodes;
+            
+            var data = {
+                category: 0,
+                name: '测试',
+                value: 10,
+                label: '测试'
+            };
+            nodes.push(data);
+            location.reload(false);
+            
+            
+        });
+    </script>
+</body>

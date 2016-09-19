@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+   
+<struts>
+    <package name="login" namespace="/login" extends="struts-default">
+    	
+        <action name="loginAction" class="cn.itcast.action.login.LoginAction">
+        <!-- 
+        <interceptor-ref name="defaultStack"/>
+        <interceptor-ref name="token"/>
+         -->
+            <result name="background">../back/background.jsp</result>
+            <result name="userview">/index.jsp</result>
+            <result name="login">/login.jsp</result>
+        </action>
+         <action name="cancelAction" class="cn.itcast.action.login.CancelAction">
+         <result name="cancel">/index.jsp</result>
+         </action>
+         <action name="memberAction" class="cn.itcast.action.login.MemberAction">
+         <result name="photo">/hometree/hometree.jsp</result>
+         <result name="login">/login.jsp</result>
+         </action>
+        <action name="userPicAction_*" class="cn.itcast.action.login.UserPicAction" method="{1}">
+            <result name="piclist">/pics.jsp</result>
+			<result name="editpic">/WEB-INF/usercenter/editpic.jsp</result>
+        </action>
+    </package>
+</struts>

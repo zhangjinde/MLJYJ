@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="cn.itcast.domain">
+
+	<class name="Relation">
+		<id name="r_id">
+			<generator class="native"/>
+		</id>
+		<property name="r_label"/>
+		<property name="r_eval"/>
+		<property name="realman"/>
+		<property name="r_umid"/>
+		<property name="r_whichgroup"/>
+		<property name="r_uname"/>
+		<property name="r_tel"/>
+		<property name="r_head"/>
+		
+	</class>
+
+</hibernate-mapping>

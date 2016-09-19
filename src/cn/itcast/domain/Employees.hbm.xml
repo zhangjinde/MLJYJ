@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="cn.itcast.domain">
+
+	<class name="Employees">
+		<id name="e_id">
+			<generator class="native"/>
+		</id>
+		<property name="e_name"/>
+		<property name="jianjie"/>
+		<property name="ry_one"/>
+		<property name="ry_two"/>
+		<property name="img_one"/>
+		<property name="img_two"/>
+		<property name="img_three"/>
+		<property name="img_four"/>
+		<property name="img_five"/>
+		<property name="img_six"/>
+		<property name="professional"/>
+		<property name="province_id"/>
+		<property name="city_id"/>
+		<property name="img_head"/>
+		
+	</class>
+
+</hibernate-mapping>

@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+   
+<struts>
+    <package name="app" namespace="/app" extends="struts-default" >
+        <action name="appAction_*" class="cn.itcast.action.app.AppAction" method="{1}">
+        	
+        </action>
+		
+		
+    </package>
+</struts>

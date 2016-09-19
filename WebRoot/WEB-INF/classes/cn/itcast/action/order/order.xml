@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+<struts>
+    <package name="order" namespace="/order" extends="struts-default">
+    	
+        
+        <action name="getOrderInfo" class="cn.itcast.action.order.GetOrderInfo" method="execute">
+           
+        </action>
+        <action name="saveOrder" class="cn.itcast.action.order.SaveOrder" method="execute">
+        </action>
+		<action name="updateOrder" class="cn.itcast.action.order.UpdateOrder" method="execute">
+        </action>
+		<action name="wxPay" class="cn.itcast.action.order.WxPay" method="execute">
+        </action>
+		<action name="wxPaysuccess" class="cn.itcast.action.order.WxPaysuccess" method="execute">
+        </action>
+		<action name="forCode" class="cn.itcast.action.order.ForCode"  method="execute">
+			<result name="code">/wxpay/code.jsp</result>
+        </action>
+		<action name="makeCode" class="cn.itcast.action.order.MakeCode" method="viewImages"></action>
+    </package>
+</struts>

@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="cn.itcast.domain">
+
+	<class name="Userstatus">
+		<id name="ust_id">
+			<generator class="native"/>
+		</id>
+		<property name="title"/>
+		<property name="instr"/>
+		<property name="ust_nickname"/>
+		<property name="ust_um_id"/>
+		<property name="time"/>
+		<property name="acceptgood"/>
+		
+	</class>
+
+</hibernate-mapping>

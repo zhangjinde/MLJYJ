@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+<struts>
+    <package name="roles" namespace="/roles" extends="struts-default">
+    	
+        <action name="rolesAction_*" class="cn.itcast.action.roles.RolesAction" method="{1}">
+        <!-- 
+        <interceptor-ref name="defaultStack"/>
+        <interceptor-ref name="token"/>
+         -->
+            <result name="addUI">/WEB-INF/rolespage/addrolesUI.jsp</result>
+            <result name="update">/WEB-INF/rolespage/update.jsp</result>
+            <result name="success" type="chain">
+				<param name="actionName">rolesActionList</param>
+                <param name="namespace">/roles</param>
+			</result>
+            <result name="invalid.token">/WEB-INF/rolespage/addrolesUI.jsp</result>
+        </action>
+        <action name="rolesActionList" class="cn.itcast.action.roles.RolesActionList">
+            <result name="list">/WEB-INF/rolespage/roleslist.jsp</result>
+        </action>
+        
+    </package>
+</struts>

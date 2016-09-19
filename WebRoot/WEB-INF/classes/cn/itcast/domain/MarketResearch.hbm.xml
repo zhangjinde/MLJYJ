@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="cn.itcast.domain">
+
+	<class name="MarketResearch">
+		<id name="mr_id">
+			<generator class="native" />
+		</id>
+		<property name="mr_name"/>
+		<property name="mr_instructions"/>
+		<property name="mr_num_agreed"/>
+		<property name="mr_num_refused"/>
+		
+	
+		
+		
+	</class>
+
+</hibernate-mapping>

@@ -1,0 +1,42 @@
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ taglib uri="/struts-tags" prefix="s"%>
+<%
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <base href="<%=basePath%>">
+    
+    <title>Myphoto</title>
+    
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="expires" content="0">    
+	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+	<meta http-equiv="description" content="This is my page">
+	<!--
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	-->
+
+  </head>
+  
+  <body>
+ 	<s:iterator value="palist">
+ 		<div style="text-align: center;">
+ 			<s:url action="wxjyjService_pics" var="pics">
+ 				<s:param value="pa_id" name="pa_id"></s:param>
+ 			</s:url>
+ 			<a href='<s:property value="pics"/>'>
+ 			<span style="font-size:2em;"><s:property value="pa_name"/></span><br/>
+ 			<span><s:property value="pa_instructions"/></span><br/>
+ 			<s:if test='%{#request.session.pa_url==null}'>
+			<img alt="封面" src="images/nopaimg.jpg"></s:if>
+			<s:else><img alt="封面" src='<s:property value="pa_url"/>'></s:else>		
+			</a>
+ 		</div>
+ 	</s:iterator>
+  </body>
+</html>

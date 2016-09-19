@@ -1,0 +1,36 @@
+*{margin:0;padding:0;list-style-type:none;}
+a,img{border:0;}
+body{font:12px/180% Arial, Helvetica, sans-serif, "ÐÂËÎÌå";}
+/*½¹µãÍ¼*/
+.mod18{width:750px;height:auto;margin:0px auto;  position:relative;}
+.mod18 .btn{position:absolute;width:33px;height:90px;top:531px;cursor:pointer;z-index:2;font-size:50px;font-weight:bold; background:url(../images/Btn.png) no-repeat;}
+.mod18 .prev{left:-30px;}
+.mod18 .prev:hover{ background-position:right 0;}
+.mod18 #prevTop,.mod18 #nextTop{top:213px;width:46px;height:48px;}
+.mod18 #prevTop{background:url(../images/prevBtnTop.png) 0 0 no-repeat; display:none;}
+.mod18 #nextTop{background:url(../images/nextBtnTop.png) 0 0 no-repeat; display:none;}
+.mod18 .next{right:-27px; background-position:0 -90px;}
+.mod18 .next:hover{ background-position:-33px -90px;}
+.mod18 li{float:left;}
+.mod18 .cf li{position:relative;color:#fff;}
+.mod18 .cf a{display:block;width:750px;height:500px;position:absolute;color:#fff;}
+.mod18 .cf li span{display:block;width:640px;position:absolute;left:0;bottom:0;padding:10px 20px;line-height:22px;text-align:left;background:rgba(0,0,0,0.6);filter:progid:DXImageTransform.Microsoft.gradient( GradientType = 0,startColorstr = "#60000000",endColorstr = "#60000000");}
+.mod18 .picBox{height:550px;position:relative; overflow:hidden;}
+.mod18 .picBox ul{height:550px;position:absolute;}
+.mod18 .picBox li{width:750px;height:520px; position:relative; text-align:center;}
+.mod18 .picBox li a span.cd{ position:absolute; left:auto; padding:0; right:9px; bottom:6px; width:26px; height:26px; background:url(../images/cb.png) no-repeat;}
+.mod18 .listBox{width:805px;height:90px;position:relative; margin-top:10px; margin-left:-30px;overflow:hidden;}
+.mod18 .listBox ul{height:90px;position:absolute;}
+.mod18 .listBox li{width:115px;height:87px;cursor:pointer;position:relative;}
+.mod18 .listBox li i{display:none;}
+.mod18 .listBox li a{display:block;width:124px;height:70px;}
+.mod18 .listBox li img{width:115px;height:87px;}
+.mod18 .listBox .on img{width:111px;height:83px;border:2px solid #333;}
+.mod18 .listBox .on i{display:block;}
+
+.mod18-slidebox
+{
+    width:750px;
+    height:500px;
+     padding:1px; border:solid 1px #808080; 
+}

@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+<struts>
+    <package name="user" namespace="/user" extends="struts-default">
+    	
+        <action name="userAction_*" class="cn.itcast.action.user.UserAction" method="{1}">
+        <!-- 
+        <interceptor-ref name="defaultStack"/>
+        <interceptor-ref name="token"/>
+         -->
+            
+            <result name="update">/WEB-INF/userpage/update.jsp</result>
+            <result name="jf">/WEB-INF/userpage/jf.jsp</result>
+			<result name="getlovepwd" type="chain">
+				<param name="actionName">searchAction_family</param>
+                <param name="namespace">/search</param>
+			</result>
+            <result name="success" type="chain">
+				<param name="actionName">userActionList</param>
+                <param name="namespace">/user</param>
+			</result>
+			<result name="addpa" type="chain">
+				<param name="actionName">paActionList</param>
+                <param name="namespace">/user</param>
+                </result>
+				<result name="utof" type="chain">
+				<param name="actionName">familyAction_getusers</param>
+                <param name="namespace">/family</param>
+                </result>
+        </action>
+        <action name="userActionList" class="cn.itcast.action.user.UserActionList">
+            <result name="list">/WEB-INF/userpage/userlist.jsp</result>
+            <result name="loginagain">/loginagain.jsp</result>
+        </action>
+        <action name="paAction_*" class="cn.itcast.action.user.PaAction" method="{1}">
+            <result name="addpaUI">/WEB-INF/userpage/addpa.jsp</result>
+            <result name="updatepa">/WEB-INF/userpage/updatepa.jsp</result>
+            <result name="addpic">/WEB-INF/userpage/addpic.jsp</result>
+            <result name="picdel" type="chain">
+            <param name="actionName">allpicAction</param>
+                <param name="namespace">/user</param>
+            </result>
+            <result name="success" type="chain">
+				<param name="actionName">paActionList</param>
+                <param name="namespace">/user</param>
+			</result>
+        </action>
+        <action name="paActionList" class="cn.itcast.action.user.PaActionList">
+            <result name="palist">/WEB-INF/userpage/palist.jsp</result>
+        </action>
+        <action name="allpicAction_*" class="cn.itcast.action.user.AllpicAction" method="{1}">
+            <result name="allpic">/WEB-INF/userpage/allpic.jsp</result>
+        </action>
+        <action name="uploadifyAction" class="cn.itcast.action.user.UploadFileDemoAction" method="uploadFile"/>
+    </package>
+</struts>

@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+<struts>
+    <package name="remind" namespace="/remind" extends="struts-default">
+    	
+        <action name="remindAction" class="cn.itcast.action.remind.RemindAction">
+      
+            <result name="success">/WEB-INF/remind/remind.jsp</result>
+        </action>
+		<action name="goRemindAction" class="cn.itcast.action.remind.GoRemindAction">
+      		 <result name="go">/WEB-INF/remind/goremind.jsp</result>
+        </action>
+		<action name="tongjiAction_*" class="cn.itcast.action.remind.TongjiAction" method="{1}">
+      		 <result name="today">/WEB-INF/remind/tongji.jsp</result>
+        </action>
+    </package>
+</struts>
