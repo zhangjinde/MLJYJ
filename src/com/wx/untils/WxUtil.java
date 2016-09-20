@@ -25,7 +25,7 @@ import com.wx.model.WxTemplate;
 
 public class WxUtil {
 	public static UserInfo getuserinfo(){
-	//第1步得到用户同意授权，得到code
+			//第1步得到用户同意授权，得到code
 			String code = ServletActionContext.getRequest().getParameter("code");
 			//第2步通过code换取网页授权access_token
 			UserInfo userInfo=null;

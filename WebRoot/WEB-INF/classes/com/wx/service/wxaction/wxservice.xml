@@ -16,6 +16,8 @@
         	<result name="nobinding">/WEB-INF/wx/nobinding.html</result>
         	<result name="pic">/WEB-INF/wx/pics.jsp</result>
         	<result name="androidshare">/WEB-INF/wx/wxsharepics.jsp</result>
+        	<result name="wxusercenter">/WEB-INF/wx/wxusercenter.jsp</result>
+        	<result name="gobinding">/WEB-INF/wx/login_app.jsp</result>
 			<result name="successupload" type="chain">
 				<param name="actionName">wxjyjService_pics</param>
             </result>

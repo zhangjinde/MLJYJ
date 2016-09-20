@@ -22,6 +22,7 @@
 		<tr><td>相册问题：</td><td><s:textfield name="pa.pa_problem" /></td></tr>
 		<tr><td>验证答案：</td><td><s:textfield name="pa.pa_answer" /></td></tr>
 		<s:hidden name="pa.pa_family.family_id"/>
+		<s:hidden name="pa.state"/>
 		<tr><td>相册类型：</td><td><s:select name="pa.pa_pac.pac_id" list="pac" listKey="pac_id" listValue="pac_name" value="pac_id" /></td></tr>
 		<tr><input type="submit" value="更新"/></tr>
 		<!-- 动态生成表单 -->

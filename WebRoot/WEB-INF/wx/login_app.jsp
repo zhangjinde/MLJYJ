@@ -51,29 +51,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 }
 </style>
 </head>
-<%
-  String city = request.getParameter("city");
-  city = new String(city.getBytes("ISO-8859-1"), "UTF-8");
-  String username = request.getParameter("username");
-  username = new String(username.getBytes("ISO-8859-1"), "UTF-8");
-  String country = request.getParameter("country");
-  country = new String(country.getBytes("ISO-8859-1"), "UTF-8");
-  String sex = request.getParameter("sex");
-  String openid = request.getParameter("openid");
-  if(sex.equals("1")){
-	  sex="男";
-  }
-  else{
-	  sex="女";
-  }
-  String imgurl = request.getParameter("imgurl");
- 
-%>
-
 <body>
 <div style="font-size: 5em;text-align: center;">授权成功</div>
 <div class="item login"  id="topbar">
-	<div class="itemlogo userlogo"><img alt="head" src="<%=imgurl%>"   id="headimg"></div>
+	<div class="itemlogo userlogo"><img alt="head" src="<s:property value='wxheadurl'/>" id="headimg"></div>
 	<div class="itemshelf">
 		<div class="shelfinfo02">微信信息</div>
 	</div>
@@ -82,30 +63,30 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <div class="item" >
 	<div class="itemlogo"></div>
 	<div class="itemshelf">
-		<div class="shelfinfo01" style="font-size: 3.5em;">用户昵称：<%=username%></div>
+		<div class="shelfinfo01" style="font-size: 3.5em;">用户昵称：<s:property value='wxusernickname'/></div>
 		
 	</div>
 </div>
 <div class="item" >
 	<div class="itemlogo"></div>
 	<div class="itemshelf">
-		<div class="shelfinfo01" style="font-size: 3.5em;">所在城市：<%=city%></div>
+		<div class="shelfinfo01" style="font-size: 3.5em;">所在城市：<s:property value='wxcity'/></div>
 		
 	</div>
 </div>
 <div class="item"  >
 	<div class="itemlogo"></div>
 	<div class="itemshelf">
-		<div class="shelfinfo01" style="font-size: 3.5em;">性&nbsp;&nbsp;&nbsp;&nbsp;别：<%=sex%></div>
+		<div class="shelfinfo01" style="font-size: 3.5em;">性&nbsp;&nbsp;&nbsp;&nbsp;别：<s:property value='wxsex'/></div>
 	</div>
 </div>
 <div class="item"  >
 	<div class="itemlogo"></div>
 	<div class="itemshelf">
-		<div class="shelfinfo01" style="font-size: 3.5em;">国&nbsp;&nbsp;&nbsp;&nbsp;家：<%=country%></div>
+		<div class="shelfinfo01" style="font-size: 3.5em;">国&nbsp;&nbsp;&nbsp;&nbsp;家：<s:property value='wxcountry'/></div>
 	</div>
 </div>
-<p id="id" style="display: none"><%=openid%></p>
+<p id="id" style="display: none"><s:property value='wxopenid'/></p>
 
 <s:hidden name="openid" value="" id="openid"/>
 
@@ -123,7 +104,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<div class="shelfinfo01" style="font-size: 3.5em;">手机号码：<input type="text" name="" class="frm_input tel" maxlength="11" id="tel" style="width:50%;font-size:50px;height: 1.5em;"/></div>
 	</div>
 </div>                       
-<div class="loader">Loading...</div>
+
 				<div  class="weibtn">	 <button id="go" type="button" class="login__submit" style="width:50%;height: 3em;margin-top: 10px;">绑 定</button></div>
 					<div id="userinfo"></div>
             <div id="footer" class="foottable">
@@ -144,8 +125,7 @@ $("#openid").attr("value",$("#id").text());
 				layer.msg("请正确填写信息。");
 		        return false;
 		    }else{
-		    	
-		    	$.post("wxTextService_wxfinduser.action", {mobile:$.trim($("#tel").val()),openid:$("#openid").val(),name:$.trim($("#name").val())}, function(data, textStatus){
+		    	$.post("wxTextService_wxfinduser.action", {mobile:$.trim($("#tel").val()),openid:$("#openid").val(),name:$.trim($("#name").val()),wxheadurl:$("#headimg").attr("src")}, function(data, textStatus){
 					if (textStatus == 'success') {
                         if (data != null) {
                         	if(data=="nohave"){
@@ -241,7 +221,9 @@ $("#openid").attr("value",$("#id").text());
                         	$table2.attr("style","text-align: center;");
                         	$table2.attr("class","table1");
                         	$("#userinfo").append($table2);
-                        	window.scroll(0,380);
+                        	window.scroll(0,350);
+                        		window.location.href="http://sawffh.vicp.cc/SSH2_MLJYJ/wxjyjService_afterbd";
+                        	
                         	}
                         	
                         }
@@ -255,4 +237,5 @@ $("#openid").attr("value",$("#id").text());
 
 
 	</script>
+	
 </body>

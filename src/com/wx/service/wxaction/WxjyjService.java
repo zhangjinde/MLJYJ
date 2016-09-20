@@ -7,6 +7,8 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URLEncoder;
+import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -29,9 +31,11 @@ import cn.itcast.domain.Family;
 import cn.itcast.domain.PhotoAlbum;
 import cn.itcast.domain.Pictures;
 import cn.itcast.domain.Studio;
+import cn.itcast.domain.Usermain;
 import cn.itcast.domain.Uservice;
 import cn.itcast.service.PhotoAlbumService;
 import cn.itcast.service.PicturesService;
+import cn.itcast.service.UsermainService;
 import cn.itcast.service.UserviceService;
 
 import com.alibaba.fastjson.JSON;
@@ -459,5 +463,225 @@ public class WxjyjService extends BaseActionSupport {
 
 		return null;
 	}
+	private String wxheadurl;
+	private String wxusernickname;
+	private String wxcountry;
+	private String wxcity;
+	private Integer howdays;
+	private String wxsex;
+	private String wxopenid;
+	
+	public String getWxsex() {
+		return wxsex;
+	}
 
+	public void setWxsex(String wxsex) {
+		this.wxsex = wxsex;
+	}
+
+	public String getWxopenid() {
+		return wxopenid;
+	}
+
+	public void setWxopenid(String wxopenid) {
+		this.wxopenid = wxopenid;
+	}
+
+	public Integer getHowdays() {
+		return howdays;
+	}
+
+	public void setHowdays(Integer howdays) {
+		this.howdays = howdays;
+	}
+
+	public String getWxheadurl() {
+		return wxheadurl;
+	}
+
+	public void setWxheadurl(String wxheadurl) {
+		this.wxheadurl = wxheadurl;
+	}
+
+	public String getWxusernickname() {
+		return wxusernickname;
+	}
+
+	public void setWxusernickname(String wxusernickname) {
+		this.wxusernickname = wxusernickname;
+	}
+
+	public String getWxcountry() {
+		return wxcountry;
+	}
+
+	public void setWxcountry(String wxcountry) {
+		this.wxcountry = wxcountry;
+	}
+
+	public String getWxcity() {
+		return wxcity;
+	}
+
+	public void setWxcity(String wxcity) {
+		this.wxcity = wxcity;
+	}
+	@Resource UsermainService ums;
+	private String userinfoper;
+	
+	public String getUserinfoper() {
+		return userinfoper;
+	}
+
+	public void setUserinfoper(String userinfoper) {
+		this.userinfoper = userinfoper;
+	}
+
+	public String newusercenter() throws ParseException{
+		UserInfo user=WxUtil.getuserinfo();
+		ServletActionContext.getContext().getSession().put("wxuser", user);
+		//业务处理
+		//第一步 先通过openid查找数据 看用户是否绑定或存在
+		wxopenid=user.getOpenid();
+		Uservice uv=us.findByOpenId(wxopenid);//附表对象
+		Usermain umain=ums.findById(uv.getUv_id());//主表对象
+		wxheadurl=user.getHeadimgurl();
+		wxusernickname=user.getNickname();
+		wxcountry=user.getCountry();
+		wxcity=user.getCity();
+		wxsex=user.getSex().equals("1")?"男":"女";
+		if(uv==null){
+			//第二步 如果未绑定去绑定
+			return "gobinding";
+		}else{
+			//第三步 如果绑定去用户中心
+			//找出用户对象uv
+			Integer wxuserid=uv.getUv_id();
+			String regtime="";
+			while(regtime==null||regtime.equals("")&&wxuserid>1){
+				//比较两个时间
+				Usermain um=ums.findById(wxuserid);
+				regtime=um.getRegtime();
+				if(regtime==null){
+					wxuserid=wxuserid-1;
+					continue;
+				}
+				Date nowdate=new Date();
+				DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+				Date reg=df.parse(regtime);
+				Long cha=nowdate.getTime()-reg.getTime();
+				howdays=(int) (cha/(24*60*60*1000));
+				break;
+			}
+			//计算资料完成度
+			double isset=9.00;
+			double allsettings=9.00;
+			if(umain.getUser_nickname()==null||umain.getUser_nickname().equals("")){
+				isset=isset-1;
+			}
+			if(umain.getPrompt_problem()==null||umain.getPrompt_problem().equals("")){
+				isset=isset-1;
+			}
+			if(uv.getBirthday()==null){
+				isset=isset-1;
+			}
+			if(uv.getEmail()==null||uv.getEmail().equals("")){
+				isset=isset-1;
+			}
+			if(uv.getGender()==null||uv.getGender().equals("")){
+				isset=isset-1;
+			}
+			if(uv.getHeadportrait_url()==null||uv.getHeadportrait_url().equals("")){
+				isset=isset-1;
+			}
+			if(uv.getQq()==null||uv.getQq().equals("")){
+				isset=isset-1;
+			}
+			if(uv.getTel()==null||uv.getTel().equals("")){
+				isset=isset-1;
+			}
+			if(uv.getWorkunit()==null||uv.getWorkunit().equals("")){
+				isset=isset-1;
+			}
+			double f=isset/allsettings;
+			String result;
+			if(f==1.00)
+				userinfoper="100";
+			else{
+				result= String.format("%.2f", f);
+				userinfoper=result.substring(2);
+			}
+			
+			return "wxusercenter";
+		}
+		
+	}
+	public String afterbd() throws ParseException{
+		UserInfo user=(UserInfo) ServletActionContext.getContext().getSession().get("wxuser");
+		wxopenid=user.getOpenid();
+		wxheadurl=user.getHeadimgurl();
+		wxusernickname=user.getNickname();
+		wxcountry=user.getCountry();
+		wxcity=user.getCity();
+		wxsex=user.getSex().equals("1")?"男":"女";
+		Uservice uv=us.findByOpenId(user.getOpenid());
+		Usermain umain=ums.findById(uv.getUv_id());
+		Integer wxuserid=uv.getUv_id();
+		String regtime="";
+		while(regtime==null||regtime.equals("")&&wxuserid>1){
+			//比较两个时间
+			Usermain um=ums.findById(wxuserid);
+			regtime=um.getRegtime();
+			if(regtime==null){
+				wxuserid=wxuserid-1;
+				continue;
+			}
+			Date nowdate=new Date();
+			DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+			Date reg=df.parse(regtime);
+			Long cha=nowdate.getTime()-reg.getTime();
+			howdays=(int) (cha/(24*60*60*1000));
+			break;
+		}
+		//计算资料完成度
+		double isset=9.00;
+		double allsettings=9.00;
+		if(umain.getUser_nickname()==null||umain.getUser_nickname().equals("")){
+			isset=isset-1;
+		}
+		if(umain.getPrompt_problem()==null||umain.getPrompt_problem().equals("")){
+			isset=isset-1;
+		}
+		if(uv.getBirthday()==null){
+			isset=isset-1;
+		}
+		if(uv.getEmail()==null||uv.getEmail().equals("")){
+			isset=isset-1;
+		}
+		if(uv.getGender()==null||uv.getGender().equals("")){
+			isset=isset-1;
+		}
+		if(uv.getHeadportrait_url()==null||uv.getHeadportrait_url().equals("")){
+			isset=isset-1;
+		}
+		if(uv.getQq()==null||uv.getQq().equals("")){
+			isset=isset-1;
+		}
+		if(uv.getTel()==null||uv.getTel().equals("")){
+			isset=isset-1;
+		}
+		if(uv.getWorkunit()==null||uv.getWorkunit().equals("")){
+			isset=isset-1;
+		}
+		double f=isset/allsettings;
+		String result;
+		if(f==1.00)
+			userinfoper="100";
+		else{
+			result= String.format("%.2f", f);
+			userinfoper=result.substring(2);
+		}
+		
+		return "wxusercenter";
+	}
 }

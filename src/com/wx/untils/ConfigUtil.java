@@ -5,13 +5,13 @@ public class ConfigUtil {
 	 * 服务号相关信息
 	 */
 	//家印记
-	 public final static String APPID = "wx909b08d5b162e885";//服务号的应用号
-	 public final static String APP_SECRECT = "0e8170740301657e74b72b2084659f77";//服务号的应用密码
-	 public final static String TOKEN = "96uFHrPD6P6jkBF9SBLr";//服务号的配置token
+	 //public final static String APPID = "wx909b08d5b162e885";//服务号的应用号
+	 //public final static String APP_SECRECT = "0e8170740301657e74b72b2084659f77";//服务号的应用密码
+	 //public final static String TOKEN = "96uFHrPD6P6jkBF9SBLr";//服务号的配置token
 	//善智网络
-//	 public final static String APPID = "wx4ccaaf091159d8c1";//服务号的应用号
-//	 public final static String APP_SECRECT = "444109c8646dbfecf01f82485603b525";//服务号的应用密码
-//	 public final static String TOKEN ="83vbM2kqp3sB29BaANE6";
+	public final static String APPID = "wx4ccaaf091159d8c1";//服务号的应用号
+	public final static String APP_SECRECT = "444109c8646dbfecf01f82485603b525";//服务号的应用密码
+	public final static String TOKEN ="83vbM2kqp3sB29BaANE6";
 	/**********************************************************************************/
 	 public final static String MCH_ID = "1241151402";//商户号
 	 public final static String API_KEY = "Jiayinjiyingxiangjiapu1679966501";//API密钥

@@ -316,7 +316,20 @@ public class WxTextService extends BaseActionSupport {
 		}
 		return null;
 	}
+	
+	private String wxheadurl;
+	
+	
 
+	public String getWxheadurl() {
+		return wxheadurl;
+	}
+
+	public void setWxheadurl(String wxheadurl) {
+		this.wxheadurl = wxheadurl;
+	}
+
+	
 	public String wxfinduser() throws IOException {
 		HttpServletResponse response = ServletActionContext.getResponse();
 		response.setContentType("text/html;charset=utf-8");
@@ -347,8 +360,10 @@ public class WxTextService extends BaseActionSupport {
 			if (openid != null) {
 				if (jyjuser.getOpenid() == null || jyjuser.getOpenid().equals("")) {
 					jyjuser.setOpenid(openid);
+					jyjuser.setHeadportrait_url(wxheadurl);
 					us.update(jyjuser);
 					response.getWriter().print(infomap.toString());
+					
 				}else{
 					response.getWriter().print("alreadydo");//已绑定
 				}
